@@ -1,0 +1,11 @@
+function generator(obj){
+    var url = 'http://testurl.bitfnix.com?';
+    for (const item in obj){
+        var param = '';
+        if(obj.hasOwnProperty(item) && obj[item]!=""){
+            param = item + '=' + obj[item] + '&';
+            url = url + param;
+        }
+    }  
+    return url.slice("&","-1");
+}
